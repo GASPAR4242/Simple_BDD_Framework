@@ -50,4 +50,4 @@
       |  Authorization  |  Token ${token}  |
       | Content-Type | application/json |
     * отправить запрос
-    * статус код 200
+    * статус код 422
