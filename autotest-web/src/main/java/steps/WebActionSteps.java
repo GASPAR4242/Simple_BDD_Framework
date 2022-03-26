@@ -11,6 +11,10 @@ import org.slf4j.LoggerFactory;
 import ru.lanit.at.utils.Sleep;
 import ru.lanit.at.web.pagecontext.PageManager;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static com.codeborne.selenide.Selenide.$;
 
 
@@ -94,7 +98,25 @@ public class WebActionSteps {
                 .setValue(value);
         LOGGER.info("в поле '{}' введено значение '{}'", field, value);
     }
-
+    /**
+     * выбрать из выпадающего списка
+     *
+     * @param text - выбрать это значение
+     * @param elemSelect - выпадающий список
+     */
+    @Когда("выбрать {string} из выпадающего списка {string}")
+    public void selectText(String text, String elemSelect){
+        pageManager
+                .getCurrentPage()
+                .getElement(elemSelect).selectOptionContainingText(text);
+        LOGGER.info("текст '{}' выбран из выпадающего списка '{}'", text, elemSelect);
+    }
+    @Когда ("прикрепить файл {string} для тикета через кнопку {string}")
+    public void attachFile(String fileName, String buttonFile){
+        pageManager
+                .getCurrentPage()
+                .getElement(buttonFile).uploadFile(new File("src/test/resources/" + fileName));
+    }
     /**
      * Очистка поля
      *

@@ -14,7 +14,7 @@ public class HelpdeskTicketsPage extends WebPage {
     @Name("кнопка начать сохранять поиск")
     private SelenideElement buttonSaveQuery =$("#headingTwo button");
     @Name("имя сохранения поиска")
-    private SelenideElement queryName = $("#headingTwo button");
+    private SelenideElement queryName = $("#id_title");
     @Name("чекбокс чтобы поиск был доступен другим")
     private SelenideElement shareOrNO = $("#id_shared");
     @Name("кнопка подтвердить сохранение поиска")

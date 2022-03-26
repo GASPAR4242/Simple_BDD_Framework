@@ -11,7 +11,7 @@ public class HelpdeskEditTicket extends WebPage {
     @Name("поле заголовок")
     private SelenideElement inputProblemTitle = $("#id_title");
     @Name("поле описание")
-    private SelenideElement description = $("#id_body");
+    private SelenideElement description = $("#id_description");
     @Name("кнопка сохранить изменения")
     private SelenideElement buttonSave = $("div[class='buttons form-group'] input");
 }

@@ -15,5 +15,5 @@ public class HelpdeskLoginPage extends WebPage {
     @Name("поле пароль")
     private SelenideElement fieldPassword = $("#password");
     @Name("кнопка подтвердить")
-    private SelenideElement submitButton = $("#input[type='submit']");
+    private SelenideElement submitButton = $("input[type='submit']");
 }
